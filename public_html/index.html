@@ -22,6 +22,15 @@
             -webkit-transform:scale(1.1);
             box-shadow: 0 0 20px crimson;
             background-color: #fff;
+            
+        }
+        .simpleCart_items img {
+            max-width: 64px;
+            max-height: 64px;
+        }
+        
+        .item_Quantity, item_decremet, item_increment{
+            text-align: center;
         }
     </style>
     
@@ -57,11 +66,12 @@
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Koszyk</h5>
+          <h5 class="modal-title" id="exampleModalLabel">Koszyk<span class="showIfEmpty"> jest pusty</span></h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
+        <div class="hideIfEmpty">
       <div class="modal-body">
          
             <div class="simpleCart_items" text-right></div> <!-- show the cart -->
@@ -95,6 +105,7 @@
         
       </div>
     </div>
+    </div>
   </div>
 </div>
     
@@ -109,16 +120,12 @@
                         
                     <div class="row">
                         <div class="col-xs-12">
-                            <img src="img/drukarka1.jpg" alt="">
+                            <img class="item_thumb" src="img/drukarka1.jpg" alt="">
                         </div>  
                     </div>
                         <div class="row">
                             <div class="col-xs-12">
                                 <h2 class="item_name"> Drukarka HP </h2>
-                                <select class="item_color">
-                                <option value="Black"> Czarny </option>
-                                <option value="White"> Biały </option>
-                                </select>
                             
                                 <h2 class="item_price">259.99 zł</h2>
                             
@@ -147,17 +154,13 @@
                         
                     <div class="row">
                         <div class="col-xs-12">
-                            <img src="img/drukarka2.jpg" alt="">
+                            <img class="item_thumb" src="img/drukarka2.jpg" alt="">
                         </div>  
                     </div>
                         <div class="row">
                             <div class="col-xs-12">
                                 <h2 class="item_name"> Drukarka Brother </h2>
-                                <select class="item_color">
-                                <option value="Black"> Czarny </option>
-                                <option value="White"> Biały </option>
-                                </select>
-                            
+
                                 <h2 class="item_price">259.99 zł</h2>
                             
                             </div>  
@@ -190,17 +193,13 @@
                         
                     <div class="row">
                         <div class="col-xs-12">
-                            <img src="img/drukarka3.jpg" alt="">
+                            <img class="item_thumb" src="img/drukarka3.jpg" alt="">
                         </div>  
                     </div>
                         <div class="row">
                             <div class="col-xs-12">
                                 <h2 class="item_name"> Drukarka Canon1 </h2>
-                                <select class="item_color">
-                                <option value="Black"> Czarny </option>
-                                <option value="White"> Biały </option>
-                                </select>
-                            
+
                                 <h2 class="item_price">259.99 zł</h2>
                             
                             </div>  
@@ -230,17 +229,13 @@
                         
                     <div class="row">
                         <div class="col-xs-12">
-                            <img src="img/drukarka4.jpg" alt="">
+                            <img class="item_thumb" src="img/drukarka4.jpg" alt="">
                         </div>  
                     </div>
                         <div class="row">
                             <div class="col-xs-12">
                                 <h2 class="item_name"> Drukarka Canon2 </h2>
-                                <select class="item_color">
-                                <option value="Black"> Czarny </option>
-                                <option value="White"> Biały </option>
-                                </select>
-                            
+
                                 <h2 class="item_price">259.99 zł</h2>
                             
                             </div>  
@@ -333,6 +328,21 @@
     simpleCart.bind( "afterAdd" , function(){
         $( ".koszyk" ).fadeOut(500).fadeIn(500);
 
+});
+
+simpleCart.bind( 'update' , function()
+{
+ if(simpleCart.quantity()==0) {
+     $(".hideIfEmpty").hide();
+     $(".showIfEmpty").show();
+ }
+ else
+ {
+    $(".hideIfEmpty").show();
+     $(".showIfEmpty").hide(); 
+ }
+ 
+ 
 });
     </script>
 </body>
