@@ -1,17 +1,15 @@
 {
-    "name": "Sklep",
-    "version": "1.0.0",
-     "scripts": {
-    "start": "cd server && npm start"
+  "name": "server",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "npm i && npm run dev",
+    "dev": "json-server -w ./src/db.json -m ./src/middleware/limit.js -p 3005"
   },
-    "keywords": [
-        "util",
-        "functional",
-        "server",
-        "client",
-        "browser"
-    ],
-    "author": "Asus",
-    "contributors": [],
-    "dependencies": {}
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "json-server": "^0.15.0"
+  }
 }
