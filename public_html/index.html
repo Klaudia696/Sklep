@@ -11,16 +11,16 @@
     <title>Sklep internetowy</title>
     
     <style>
-        .item{
+        .simpleCart_shelfItem{
             padding: 40px;
            transition: all .3s;
            -webkit-transition: all .4s;
         }
-        .item:hover{ 
+        .simpleCart_shelfItem:hover{ 
             transform:scale(1.1);
             -ms-transform:scale(1.1);
             -webkit-transform:scale(1.1);
-            box-shadow: 0 0 20px crimson;
+            box-shadow: 0 0 20px grey;
             background-color: #fff;
             
         }
@@ -32,6 +32,7 @@
         .item_Quantity, item_decremet, item_increment{
             text-align: center;
         }
+      
     </style>
     
   </head>
@@ -55,12 +56,28 @@
         </form>
     </div>
             </nav>
+                <label>Producent:</label>
+			<div class="controls btn-group">
+				<button class="filter btn btn-sm btn-warning" data-filter="all">All</button>
+				<button class="filter btn btn-sm btn-warning" data-filter=".HP">HP</button>
+				<button class="filter btn btn-sm btn-warning" data-filter=".Brother">Brother</button>
+                                <button class="filter btn btn-sm btn-warning" data-filter=".Canon">Canon</button>
+			</div>
+
+			<div class="pull-right">
+					<label>Cena:</label>
+					<div class="controls btn-group">
+						<button class="sort btn btn-sm btn-warning" data-sort="price:asc">Rosnąco</button>
+						<button class="sort btn btn-sm btn-warning" data-sort="price:desc">Malejąco</button>
+					</div>
+			</div>
+                <p>&nbsp;</p>
           </div> 
         </div> 
     </div>
 
-  
 
+      
 <!-- Modal -->
 <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
@@ -115,7 +132,7 @@
         <div class="row">
             
 
-            <div class="col-md-6 item text-center">
+            <div class="col-md-6 item text-center mix HP" data-price="169">
                 <div class="simpleCart_shelfItem">
                         
                     <div class="row">
@@ -127,8 +144,9 @@
                             <div class="col-xs-12">
                                 <h2 class="item_name"> Drukarka HP </h2>
                             
-                                <h2 class="item_price">169.99 zł</h2>
+                                <h2 class="item_price">169 zł</h2>
                             <p class="id">ID: 1695hj35</p>
+                            <p class="opis">Opis Produktu: ...</p>
                             </div>  
                         </div>
                             <div class="row">
@@ -141,7 +159,7 @@
                             <input type="text" value="1" class="item_Quantity form-control" placeholder="ilość">
                         
                         </div>
-                         
+                         <p>&nbsp;</p>
                         <div class="col-xs-5">
                             <a type="button" class="item_add btn btn-md btn-primary" href="javascript:;"> Dodaj do koszyka </a>
                         </div>
@@ -149,7 +167,7 @@
                 </div>
             </div>
             
-           <div class="col-md-6 item text-center">
+           <div class="col-md-6 item text-center mix Brother" data-price="259">
                 <div class="simpleCart_shelfItem">
                         
                     <div class="row">
@@ -161,8 +179,9 @@
                             <div class="col-xs-12">
                                 <h2 class="item_name"> Drukarka Brother </h2>
 
-                                <h2 class="item_price">259.99 zł</h2>
+                                <h2 class="item_price">259 zł</h2>
                                 <p class="id">ID: 1695hj35</p>
+                                <p class="opis">Opis Produktu: ...</p>
                             
                             </div>  
                         </div>
@@ -176,20 +195,20 @@
                             <input type="text" value="1" class="item_Quantity form-control" placeholder="ilość">
                         
                         </div>
-                         
+                         <p>&nbsp;</p>
                         <div class="col-xs-5">
                             <a type="button" class="item_add btn btn-md btn-primary" href="javascript:;"> Dodaj do koszyka </a>
                         </div>
                     </div>
                 </div>
             </div> 
-            
-            
-
-            
         </div>
-                <div class="row">
-           <div class="col-md-6 item text-center">
+        
+        
+            
+<div class="row">
+             
+           <div class="col-md-6 item text-center mix Canon" data-price="159">
                 <div class="simpleCart_shelfItem">
                         
                     <div class="row">
@@ -201,8 +220,9 @@
                             <div class="col-xs-12">
                                 <h2 class="item_name"> Drukarka Canon1 </h2>
 
-                                <h2 class="item_price">159.99 zł</h2>
+                                <h2 class="item_price">159 zł</h2>
                                 <p class="id">ID: 1695hj35</p>
+                                <p class="opis">Opis Produktu: ...</p>
                             
                             </div>  
                         </div>
@@ -216,30 +236,31 @@
                             <input type="text" value="1" class="item_Quantity form-control" placeholder="ilość">
                         
                         </div>
-                         
+                         <p>&nbsp;</p>
                         <div class="col-xs-5">
                             <a type="button" class="item_add btn btn-md btn-primary" href="javascript:;"> Dodaj do koszyka </a>
                         </div>
                     </div>
                 </div>
-            </div>
+            
+           </div>    
                     
                     
-                    
-           <div class="col-md-6 item text-center">
+           <div class="col-md-6 item text-center mix Canon" data-price="139">
                 <div class="simpleCart_shelfItem">
                         
                     <div class="row">
                         <div class="col-xs-12">
-                            <img class="item_thumb" src="img/drukarka4.jpg" alt="">
+                            <img class="item_thumb" src="img/drukarka3.jpg" alt="">
                         </div>  
                     </div>
                         <div class="row">
                             <div class="col-xs-12">
                                 <h2 class="item_name"> Drukarka Canon2 </h2>
 
-                                <h2 class="item_price">139.99 zł</h2>
+                                <h2 class="item_price">139 zł</h2>
                                 <p class="id">ID: 1695hj35</p>
+                                <p class="opis">Opis Produktu: ...</p>
                             
                             </div>  
                         </div>
@@ -253,7 +274,7 @@
                             <input type="text" value="1" class="item_Quantity form-control" placeholder="ilość">
                         
                         </div>
-                         
+                         <p>&nbsp;</p>
                         <div class="col-xs-5">
                             <a type="button" class="item_add btn btn-md btn-primary" href="javascript:;"> Dodaj do koszyka </a>
                         </div>
@@ -261,14 +282,18 @@
                 </div>
             </div>
     </div>
-
+            </div>
+    </div>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
     <script src="js/simpleCart.js"></script>
-    <script>simpleCart({
+    <script src="http://cdn.jsdelivr.net/jquery.mixitup/latest/jquery.mixitup.min.js?v=2.1.2"></script>
+
+    <script>
+        simpleCart({
 
     cartColumns: [
         { attr: "name", label: "Nazwa"},
@@ -348,12 +373,16 @@ simpleCart.bind( 'update' , function()
  
  
 });
-    </script>
-    <script>
-    $(function{
-     $(' #Container').mixItUp();
+
+$(function{
+     var mixer = mixitup('.container');
     });
+    
     </script>
+    
+   
+    
+   
     
     
 </body>
